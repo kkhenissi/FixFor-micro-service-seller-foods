@@ -14,12 +14,12 @@ public class Fooditem {
 
     private String designation;
     private String description;
-    private String category;
+    private byte[] photo;
     private String imageUrl;
     private double price;
+    private boolean active;
     private Date saledate;
     private Seller seller;
-
 
 
 }
