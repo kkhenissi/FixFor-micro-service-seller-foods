@@ -2,7 +2,10 @@ C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\jav
 C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\infrastructure\FoodServiceImpl.java
 C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\Application.java
 C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\domain\FoodService.java
+C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\security\JWTAuthorizationFilter.java
 C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\infrastructure\FoodRepository.java
+C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\infrastructure\SellerRepository.java
 C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\domain\Fooditem.java
 C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\interfaces\FoodController.java
 C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\interfaces\TestController.java
+C:\Users\USER\fixfor\micro-service-seller-foods\java-spring-mongodb\src\main\java\com\fixfor\webapp\security\ScurityConfig.java

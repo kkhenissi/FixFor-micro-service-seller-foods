@@ -1,12 +1,15 @@
 package com.fixfor.webapp.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 @Document(collection = "fooditems")
-@Data
+@Data @AllArgsConstructor @NoArgsConstructor
 public class Fooditem {
 
     @Id
@@ -19,6 +22,7 @@ public class Fooditem {
     private double price;
     private boolean active;
     private Date saledate;
+    @DBRef
     private Seller seller;
 
 

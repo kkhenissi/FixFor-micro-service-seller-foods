@@ -1,7 +1,11 @@
 package com.fixfor.webapp;
 
 import com.fixfor.webapp.domain.Fooditem;
+import com.fixfor.webapp.domain.Seller;
+import com.fixfor.webapp.infrastructure.FoodRepository;
+import com.fixfor.webapp.infrastructure.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +17,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
 @SpringBootApplication
 @EnableMongoRepositories
 public class Application {
@@ -22,7 +30,51 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 
 	}
+  @Bean
+	CommandLineRunner start(SellerRepository sellerRepository, FoodRepository foodRepository) {
+	return args -> {
+/*        sellerRepository.deleteAll();
+		Stream.of("Gyross", "Merzak", "Obun's").forEach(s -> {
+			sellerRepository.save(new Seller(null,s,125.235,356.256, new ArrayList<Fooditem>(),null));
+		});*/
+/*		sellerRepository.save(new Seller(null,"Gyross", 135.225, 120.1225, null,null));
+		sellerRepository.save(new Seller(null,"Obuns", 166.24525, 270.1225, null,null));
+		sellerRepository.save(new Seller(null,"Merzak", 223.225, 300.1225, null,null));*/
+	//	sellerRepository.findAll().forEach(System.out::println);
+/*		Stream.of("p1", "p2", "p3", "p4").forEach(designation -> {
+			Seller s1 = sellerRepository.findById("5fa0698d3d4fa8068c52920c").get();
+//			System.out.println("sssssssssssssssssss");
+//			System.out.println(s1);
+//			System.out.println(s1.getFooditems());
+		  Fooditem fooditem =	foodRepository.save((new Fooditem(null,designation, designation, null,null,0,true,null,s1)));
+		 s1.getFooditems().add(fooditem);
+		 sellerRepository.save(s1);
+		 System.out.println("kkkkkkkkkkkkkkkkkkkk");
+		//	System.out.println(s1.getFooditems());
+		});*/
 
+/*		Stream.of("p5", "p6", "p7", "p8").forEach(designation -> {
+			Seller s2 = sellerRepository.findById("5fa0698d3d4fa8068c52920e").get();
+			Fooditem fooditem =	foodRepository.save((new Fooditem(null,designation,designation, null,null,0,true,null, s2)));
+			s2.getFooditems().add(fooditem);
+			sellerRepository.save(s2);
+		});
+
+		Stream.of("p10", "p11", "p12", "p13").forEach(designation -> {
+			Seller s3 = sellerRepository.findById("5fa0698d3d4fa8068c52920d").get();
+			Fooditem fooditem =		foodRepository.save((new Fooditem(null,designation,designation, null,null,0,true,null,s3)));
+			s3.getFooditems().add(fooditem);
+			sellerRepository.save(s3);
+		});*/
+
+/*		foodRepository.findAll().forEach(fd -> {
+			System.out.println(fd.toString());
+		});*/
+/*		sellerRepository.findAll().forEach(sl->{
+			System.out.println(sl.toString());
+		});*/
+	};
+	}
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		this.repositoryRestConfiguration.exposeIdsFor(Fooditem.class);

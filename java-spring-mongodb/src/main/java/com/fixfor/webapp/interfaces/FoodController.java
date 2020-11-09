@@ -51,11 +51,29 @@ public class FoodController {
 
     }
 
-    public RequestEntity.BodyBuilder uploadImage(@RequestParam("imageFile") MultipartFile file) throws Exception {
+    @RequestMapping(path = "/findByDesignation", method = RequestMethod.GET)
+    public List<Fooditem> findByDesignation(@RequestParam("designation") String designation) {
 
-        System.out.println("Origina Image Byte Size -" + file.getBytes().length);
+        return foodRepository.findByDesignation(designation);
 
-        return null;
+    }
+    @PostMapping("/fooduploadphoto/{id}")
+    public void handelPhotoUoload(@RequestBody MultipartFile file, @PathVariable String id)  {
+        try {
+            Files.write(Paths.get(System.getProperty("user.home")+"/fixforImages/foods/"+id+".jpg"), file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+    }
+    @PutMapping("/fooduploadphoto/{id}")
+    public void handelPhotoUoloadUpdate(@RequestBody MultipartFile file, @PathVariable String id)  {
+        try {
+            Files.write(Paths.get(System.getProperty("user.home")+"/fixforImages/foods/"+id+".jpg"), file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
     }
 
     @GetMapping(path = "/foodPhoto/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
