@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource
 public interface FoodRepository extends MongoRepository<Fooditem, String> {
 
-    List<Fooditem> findBySellerDesignation(@Param("sellerDesignation") String sellerDesignation);
+    List<Fooditem> findBySellerId(@Param("sellerId") String sellerId);
 
     List<Fooditem> findByDesignation(@Param("designation") String designation);
 

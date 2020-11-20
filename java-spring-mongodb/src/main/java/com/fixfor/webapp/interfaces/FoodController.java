@@ -1,35 +1,17 @@
 package com.fixfor.webapp.interfaces;
 
-import java.awt.*;
-import java.io.File;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.List;
-import org.apache.commons.io.FileUtils;
-
-import ch.qos.logback.core.util.FileUtil;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fixfor.webapp.domain.Fooditem;
 import com.fixfor.webapp.domain.FoodService;
-
 import com.fixfor.webapp.infrastructure.FoodRepository;
-
-import org.apache.catalina.connector.Response;
-
-import org.apache.commons.io.FilenameUtils;
-
-import org.bson.json.JsonParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.RequestEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.ServletContext;
 
 
@@ -103,34 +85,5 @@ public class FoodController {
         }
 
     }
-/*    @PostMapping("/foodItems")
-    public ResponseEntity<Response> addFoodItem(@RequestParam("file") MultipartFile file,
-                                                @RequestParam("item") String item) throws JsonParseException, JsonMappingException, Exception {
-
-
-        System.out.println("Ok ...................");
-        Fooditem fooditem = new ObjectMapper().readValue(item, Fooditem.class);
-        boolean isExist = new File(context.getRealPath("Images/")).exists();
-        if(!isExist) {
-            new File (context.getRealPath("/Images/")).mkdir();
-            System.out.println("mkdir .....................");
-        }
-        String filename = file.getOriginalFilename();
-        String newFileName = FilenameUtils.getBaseName(filename)+"."+FilenameUtils.getExtension(filename);
-        File serverFile = new File(context.getRealPath("/Images"+File.separator+newFileName));
-        try {
-            System.out.println("Image");
-            FileUtils.writeByteArrayToFile(serverFile, file.getBytes());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        fooditem.setImageUrl(filename);
-        Fooditem fooditem1 = foodRepository.save(fooditem);
-        if(fooditem1 != null) {
-            return new ResponseEntity<Response>(new Response(), HttpStatus.MULTI_STATUS.OK);
-        } else {
-            return new ResponseEntity<Response>(new Response(), HttpStatus.MULTI_STATUS.BAD_REQUEST);
-        }
-    }*/
 
 }

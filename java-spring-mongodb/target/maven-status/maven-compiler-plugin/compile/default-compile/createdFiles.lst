@@ -1,11 +1,13 @@
-com\fixfor\webapp\domain\Seller.class
 com\fixfor\webapp\interfaces\FoodController.class
-com\fixfor\webapp\domain\Fooditem.class
 com\fixfor\webapp\security\JWTAuthorizationFilter.class
 com\fixfor\webapp\infrastructure\FoodServiceImpl.class
 com\fixfor\webapp\interfaces\TestController.class
-com\fixfor\webapp\Application.class
+com\fixfor\webapp\interfaces\SellerController.class
 com\fixfor\webapp\domain\FoodService.class
+com\fixfor\webapp\domain\Seller.class
+com\fixfor\webapp\domain\Fooditem.class
+com\fixfor\webapp\domain\SellerService.class
+com\fixfor\webapp\Application.class
 com\fixfor\webapp\Application$1.class
 com\fixfor\webapp\infrastructure\SellerRepository.class
 com\fixfor\webapp\infrastructure\FoodRepository.class

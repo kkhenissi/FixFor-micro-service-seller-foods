@@ -33,16 +33,19 @@ public class Application {
   @Bean
 	CommandLineRunner start(SellerRepository sellerRepository, FoodRepository foodRepository) {
 	return args -> {
-/*        sellerRepository.deleteAll();
+    /*   sellerRepository.deleteAll();
+
 		Stream.of("Gyross", "Merzak", "Obun's").forEach(s -> {
 			sellerRepository.save(new Seller(null,s,125.235,356.256, new ArrayList<Fooditem>(),null));
 		});*/
-/*		sellerRepository.save(new Seller(null,"Gyross", 135.225, 120.1225, null,null));
-		sellerRepository.save(new Seller(null,"Obuns", 166.24525, 270.1225, null,null));
-		sellerRepository.save(new Seller(null,"Merzak", 223.225, 300.1225, null,null));*/
+/*		sellerRepository.save(new Seller(null,"Gyross", null,null , 120.1225,120.1225,null,null));
+		sellerRepository.save(new Seller(null,"Obuns", null,null , 120.1225,120.1225,null,null));
+		sellerRepository.save(new Seller(null,"Merzak", null,null , 120.1225,120.1225,null,null));
+		sellerRepository.save(new Seller(null,"Obuns", null,null , 120.1225,120.1225,null,null));*/
+
 	//	sellerRepository.findAll().forEach(System.out::println);
 /*		Stream.of("p1", "p2", "p3", "p4").forEach(designation -> {
-			Seller s1 = sellerRepository.findById("5fa0698d3d4fa8068c52920c").get();
+			Seller s1 = sellerRepository.findById("5fb1bace86268e3818db6cfc").get();
 //			System.out.println("sssssssssssssssssss");
 //			System.out.println(s1);
 //			System.out.println(s1.getFooditems());
@@ -51,26 +54,26 @@ public class Application {
 		 sellerRepository.save(s1);
 		 System.out.println("kkkkkkkkkkkkkkkkkkkk");
 		//	System.out.println(s1.getFooditems());
-		});*/
+		});
 
-/*		Stream.of("p5", "p6", "p7", "p8").forEach(designation -> {
-			Seller s2 = sellerRepository.findById("5fa0698d3d4fa8068c52920e").get();
+		Stream.of("p5", "p6", "p7", "p8").forEach(designation -> {
+			Seller s2 = sellerRepository.findById("5fb1bace86268e3818db6cfd").get();
 			Fooditem fooditem =	foodRepository.save((new Fooditem(null,designation,designation, null,null,0,true,null, s2)));
 			s2.getFooditems().add(fooditem);
 			sellerRepository.save(s2);
 		});
 
 		Stream.of("p10", "p11", "p12", "p13").forEach(designation -> {
-			Seller s3 = sellerRepository.findById("5fa0698d3d4fa8068c52920d").get();
+			Seller s3 = sellerRepository.findById("5fb1bace86268e3818db6cfe").get();
 			Fooditem fooditem =		foodRepository.save((new Fooditem(null,designation,designation, null,null,0,true,null,s3)));
 			s3.getFooditems().add(fooditem);
 			sellerRepository.save(s3);
-		});*/
+		});
 
-/*		foodRepository.findAll().forEach(fd -> {
+		foodRepository.findAll().forEach(fd -> {
 			System.out.println(fd.toString());
-		});*/
-/*		sellerRepository.findAll().forEach(sl->{
+		});
+		sellerRepository.findAll().forEach(sl->{
 			System.out.println(sl.toString());
 		});*/
 	};
@@ -78,6 +81,7 @@ public class Application {
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		this.repositoryRestConfiguration.exposeIdsFor(Fooditem.class);
+		this.repositoryRestConfiguration.exposeIdsFor(Seller.class);
 		System.out.println("55555555555555555555555555555555555555555555555555555555");
 		return new WebMvcConfigurer() {
 			@Override
